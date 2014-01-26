@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %meta{ charset: "utf-8" }
+    %meta{ name: "viewport", content: "width=device-width" }
+
+    %title Tore Holmberg -- Technical direction and development
+
+    = stylesheet_link_tag "styles"
+
+  %body
+    %header
+      %h1
+        Tore Holmberg
+        %br/
+        Technical direction &amp; development
+
+    = yield
+
+    %footer
+
+    = javascript_include_tag  "application"
