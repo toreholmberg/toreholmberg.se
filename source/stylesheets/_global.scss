@@ -1,0 +1,16 @@
+body {
+  text-align: center;
+}
+
+header {
+
+  &:before {
+    content: '';
+    display: block;
+    height: 20rem;
+    background: transparent url(../images/axe.svg) no-repeat top center;
+    margin-bottom: 2rem;
+  }
+
+  margin-top: 4rem;
+}

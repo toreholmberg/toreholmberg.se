@@ -51,6 +51,8 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
+I18n.enforce_available_locales = false
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
