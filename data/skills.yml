@@ -1,10 +1,10 @@
-- title: Front-end
+- label: Front-end
   items:
     - HTML/CSS (HAML/SASS)
     - JavaScript (CoffeeScript, CommonJS/AMD)
     - Flash (AS2-3)
 
-- title: Back-end
+- label: Back-end
   items:
     - Ruby on Rails and Sinatra
     - Node.js
@@ -12,7 +12,7 @@
     - SQL/NoSQL databases
     - Server administration (Linux)
 
-- title: Other
+- label: Other
   items:
     - Technical writing
     - Project scoping and estimates

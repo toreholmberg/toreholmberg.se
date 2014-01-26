@@ -6,7 +6,7 @@
   %h2 Skill set
   - data.skills.each do |group|
     %dl.inline-list
-      %dt.inline-list__group= group.title
+      %dt.inline-list__group= group.label
       - group.items.each do |item|
         %dd.inline-list__item= item
 
