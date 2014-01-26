@@ -53,16 +53,24 @@ set :images_dir, 'images'
 
 I18n.enforce_available_locales = false
 
+activate :s3_sync do |s3_sync|
+  s3_sync.bucket = 'toreholmberg.se'
+  s3_sync.region = 'us-east-1'
+end
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
+
+  # Minify HTML on build
+  activate :minify_html
 
   # Enable cache buster
-  # activate :asset_hash
+  activate :asset_hash
 
   # Use relative URLs
   # activate :relative_assets
