@@ -98,7 +98,7 @@
 }
 
 .contacts-list {
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
 }
 
@@ -130,6 +130,12 @@ url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAAGXRFWH
 }
 
 @media screen and (max-width: 570px) {
+  .contacts-list {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
   .contacts-list,
   .contacts-list__type,
   .contacts-list__content {
