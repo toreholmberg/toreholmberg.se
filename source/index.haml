@@ -1,6 +1,5 @@
 %section
-  %h2 Profile
-  %p Born in Sweden, currently located in New York, Tore Holmberg is a Creative Technologist with experience in a vast variety of web development projects and clients. Hyper Island graduate with a broad knowledge of client and server side development.
+  %p Born in Sweden, currently located in New York, Tore Holmberg focuses on techical direction and hands on development using a variety of technologies and for a multitude of projects. Hyper Island graduate with broad knowledge of client and server side development as well as of process and how to build functional and beautiful applications in collaboration with designers and producers.
 
 %section
   %h2 Skill set
@@ -20,13 +19,12 @@
             %li<
               %strong= "#{item.start} &mdash; #{item.end}"
             %li= "#{item.title}"
-            %li= link_to item.company, item.url, :target => '_blank'
+            %li= link_to item.company, item.url, :target => "_blank"
             %li= "#{item.location}"
         .two-col-list__col2= item.description.lines.map{|s| "<p>#{s}</p>"}.join
 
 %section
   %h2 Contact
-
   %ul.contacts-list
     %li.contacts-list__row.clearfix
       .contacts-list__type Location
@@ -56,8 +54,8 @@
           </script>
     %li.contacts-list__row.clearfix
       .contacts-list__type GitHub
-      .contacts-list__content= link_to "http://github.com/toreholmberg", "http://github.com/toreholmberg", :target => '_blank'
+      .contacts-list__content= link_to "http://github.com/toreholmberg", "http://github.com/toreholmberg", :target => "_blank"
     %li.contacts-list__row.clearfix
       .contacts-list__type LinkedIn
-      .contacts-list__content= link_to "http://www.linkedin.com/in/toreholmberg", "http://www.linkedin.com/in/toreholmberg", :target => '_blank'
+      .contacts-list__content= link_to "http://www.linkedin.com/in/toreholmberg", "http://www.linkedin.com/in/toreholmberg", :target => "_blank"
   %p No recruiters or staffing agencies, please.

@@ -52,5 +52,12 @@ header {
     @include margin-bottom(1);
   }
 
-  margin: ($line-height * 2rem) 0;
+  &:after {
+    content: '--';
+    font-weight: bold;
+    margin-top: ($line-height * 1rem);
+    display: block;
+  }
+
+  margin: ($line-height * 2rem) 0 ($line-height * 1rem) 0;
 }
