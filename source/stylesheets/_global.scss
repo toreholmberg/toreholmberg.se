@@ -9,7 +9,7 @@ body {
 section {
   max-width: $breakpoint-tablet;
   margin: 0 auto ($line-height * 2rem) auto;
-  padding: 0 ($line-height * 2rem);
+  padding: 0 ($line-height * 1rem);
 }
 
 h2, p {

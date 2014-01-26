@@ -106,7 +106,7 @@
   @include margin-bottom(1);
 
   background-repeat: repeat-x;
-  background-position: 0 11px;
+  background-position: 0 1.1rem;
   background-image:
 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQzE2NjZGRDdFODgxMUUzODZDOEMxMUM3M0ExQzc1MSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQzE2NjZGRTdFODgxMUUzODZDOEMxMUM3M0ExQzc1MSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNDMTY2NkZCN0U4ODExRTM4NkM4QzExQzczQTFDNzUxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNDMTY2NkZDN0U4ODExRTM4NkM4QzExQzczQTFDNzUxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+J6Ue4QAAABJJREFUeNpi+P//PwMQOAAEGAAVNAM+EskM+AAAAABJRU5ErkJggg==);
 }
@@ -119,14 +119,14 @@ url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAAGXRFWH
 .contacts-list__type {
   float: left;
   text-align: right;
-  padding-right: 5px;
+  padding-right: .5rem;
   font-weight: bold;
 }
 
 .contacts-list__content {
   text-align: right;
   float: right;
-  padding-left: 5px;
+  padding-left: .5rem;
 }
 
 @media screen and (max-width: 570px) {
@@ -136,11 +136,20 @@ url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAAGXRFWH
 }
 
 @media screen and (max-width: $breakpoint-mobile) {
+
+  .contacts-list {
+    @include margin-bottom(1);
+  }
+
   .contacts-list,
   .contacts-list__type,
   .contacts-list__content {
     width: 100%;
     text-align: center;
+  }
+
+  .contacts-list__row {
+    @include margin-bottom(.5);
   }
 
   .contacts-list__content a {
