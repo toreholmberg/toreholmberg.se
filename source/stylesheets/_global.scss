@@ -1,5 +1,44 @@
+*, *:before, *:after {
+  @include box-sizing(border-box);
+}
+
 body {
   text-align: center;
+}
+
+section {
+  max-width: $breakpoint-tablet;
+  margin: 0 auto ($line-height * 2rem) auto;
+  padding: 0 ($line-height * 2rem);
+}
+
+h2, p {
+  @include margin-bottom(1);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  @include single-transition(opacity .2s);
+}
+
+%link-arrow:after {
+  content: '→';
+  margin-left: .5rem;
+  font-weight: bold;
 }
 
 header {
@@ -7,10 +46,11 @@ header {
   &:before {
     content: '';
     display: block;
-    height: 20rem;
+    height: 15rem;
     background: transparent url(../images/axe.svg) no-repeat top center;
-    margin-bottom: 2rem;
+    background-size: contain;
+    @include margin-bottom(1);
   }
 
-  margin-top: 4rem;
+  margin: ($line-height * 2rem) 0;
 }

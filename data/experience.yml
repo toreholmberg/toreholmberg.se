@@ -1,0 +1,50 @@
+- title: Tech Director
+  company: Your Majesty
+  location: New York, NY
+  url: http://yourmajesty.co
+  start: 2010
+  end: present
+  description: |
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a consequat neque. Curabitur condimentum, urna sed ullamcorper scelerisque, turpis orci laoreet nulla, vel sagittis est mauris vel nulla.
+    Fusce tempor risus nec libero faucibus, eu venenatis felis egestas. Proin varius porttitor hendrerit.
+    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec molestie metus ac nunc dictum.
+
+- title: Technical Lead
+  company: Incredible Department
+  location: Stockholm, Sweden
+  url: http://incredibledepartment.com
+  start: 2009
+  end: 2010
+  description: |
+    Donec molestie metus ac nunc dictum, congue ornare velit placerat. Integer non elit turpis.
+    Etiam rhoncus leo vel urna aliquam, placerat interdum mi iaculis. Nullam lacinia faucibus magna, at commodo justo convallis vitae.
+
+- title: Creative Developer
+  company: AKQA
+  location: San Francisco, CA
+  url: http://akqa.com
+  start: 2008
+  end: 2009
+  description: |
+    Cras consectetur quam rhoncus, ultrices elit at, luctus tellus. Cras tortor metus, sodales sit amet orci eget, fringilla semper justo.
+    Integer pretium dui at dui ornare ultricies. Vivamus adipiscing metus at blandit consectetur.
+
+- title: Digital Media
+  company: Hyper Island
+  location: Karlskrona, Sweden
+  url: http://hyperisland.se
+  start: 2007
+  end: 2009
+  description: |
+    Nunc id ipsum ut enim fringilla congue. Suspendisse hendrerit dui vestibulum facilisis iaculis. Nunc risus velit, pharetra quis ante non, bibendum tincidunt nunc.
+    Cras congue elit a mi accumsan, sed rutrum odio molestie. Integer eget lectus enim. Fusce tempus lacus eu quam feugiat hendrerit. Nulla nec porttitor purus.
+
+- title: Media-communication Engineering
+  company: Umeå university
+  location: Umeå, Sweden
+  url: http://umu.se
+  start: 2005
+  end: 2007
+  description: |
+    Sed condimentum odio a turpis dictum, at mollis ligula euismod. Cras fermentum eros neque, vel hendrerit lectus viverra vitae. Curabitur et sollicitudin ipsum.
+    Nam libero ipsum, euismod at augue at, gravida suscipit nunc. Mauris a nisl tempor lacus placerat imperdiet eu ut velit.
