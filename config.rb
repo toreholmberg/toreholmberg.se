@@ -45,14 +45,15 @@
 #   end
 # end
 
+# Asset dirs
 set :css_dir, 'stylesheets'
-
 set :js_dir, 'javascripts'
-
 set :images_dir, 'images'
 
+# Don't fail on invalid locale
 I18n.enforce_available_locales = false
 
+# S3 Sync bucket/region
 activate :s3_sync do |s3_sync|
   s3_sync.bucket = 'toreholmberg.se'
   s3_sync.region = 'us-east-1'
