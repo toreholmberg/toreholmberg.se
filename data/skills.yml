@@ -1,10 +1,10 @@
-- label: Front-end
+- label: Frontend
   items:
     - HTML/CSS (HAML/SASS)
     - JavaScript (CoffeeScript, CommonJS/AMD)
     - Flash (AS2-3)
 
-- label: Back-end
+- label: Backend
   items:
     - Ruby on Rails and Sinatra
     - Node.js

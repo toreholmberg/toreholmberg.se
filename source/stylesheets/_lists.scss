@@ -148,6 +148,12 @@ url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAAGXRFWH
     text-align: center;
   }
 
+  .contacts-list__type {
+    &:after {
+      content: ':';
+    }
+  }
+
   .contacts-list__row {
     @include margin-bottom(.5);
   }
