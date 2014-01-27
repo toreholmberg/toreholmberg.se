@@ -35,10 +35,12 @@ a {
   @include single-transition(opacity .2s);
 }
 
-%link-arrow:after {
-  content: '→';
-  margin-left: .5rem;
-  font-weight: bold;
+%link-arrow {
+  &:after {
+    content: '→';
+    margin-left: .5rem;
+    font-weight: bold;
+  }
 }
 
 header {

@@ -29,6 +29,15 @@
   @extend %link-arrow;
 }
 
+@media print {
+  .two-col-list__meta a {
+    &:after {
+      content: '' !important;
+      margin-left: 0 !important;
+    }
+  }
+}
+
 @media screen and (max-width: $breakpoint-mobile) {
   .two-col-list__col1,
   .two-col-list__col2 {
