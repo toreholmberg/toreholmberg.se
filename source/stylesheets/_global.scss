@@ -49,7 +49,7 @@ header {
     content: '';
     display: block;
     height: 15rem;
-    background: transparent url(../images/axe.svg) no-repeat top center;
+    background: transparent url(image-path('axe.svg')) no-repeat top center;
     background-size: contain;
     @include margin-bottom(1);
   }

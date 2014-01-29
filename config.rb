@@ -77,5 +77,5 @@ configure :build do
   # activate :relative_assets
 
   # Or use a different image path
-  # set :http_prefix, "/Content/images/"
+  # set :http_prefix, 'http://d9ql9l0r1qxd9.cloudfront.net'
 end
