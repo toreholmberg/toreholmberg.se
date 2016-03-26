@@ -11,7 +11,7 @@ import del from 'del';
 
 const PORT = 3000;
 const BUILD_DIR = `${__dirname}/build`;
-const HTML_GLOB = './source/**/*.html';
+const HTML_GLOB = './source/**/*.{html,ico}';
 const CSS_GLOB = './source/css/**/*.css';
 
 export function clean() {
