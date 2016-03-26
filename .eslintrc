@@ -1,0 +1,10 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb/base",
+  "rules": {
+    "block-scoped-var": 0,
+    "padded-blocks": 0,
+    "comma-dangle": 0,
+    "arrow-body-style": 0
+  }
+}
