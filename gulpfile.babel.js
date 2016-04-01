@@ -1,39 +1,39 @@
 import gulp, { src, dest, series, parallel } from 'gulp';
-import sourcemaps from 'gulp-sourcemaps';
-import postcss from 'gulp-postcss';
+import { readFileSync } from 'fs';
+import postcss from 'postcss';
 import cssnext from 'postcss-cssnext';
-import atImport from 'postcss-import';
 import precss from 'precss';
-import lost from 'lost';
 import express from 'express';
 import morgan from 'morgan';
 import del from 'del';
+import template from 'gulp-template';
+import CleanCSS from 'clean-css';
 
 const PORT = 3000;
 const BUILD_DIR = `${__dirname}/build`;
-const HTML_GLOB = './source/**/*.{html,ico}';
-const CSS_GLOB = './source/css/**/*.css';
 
 export function clean() {
   return del([BUILD_DIR]);
 }
 
 export function html() {
-  return src(HTML_GLOB)
-    .pipe(dest(BUILD_DIR));
+  return postcss([cssnext, precss])
+    .process(readFileSync('./source/css/styles.css').toString())
+    .then(result => {
+
+      const css = process.env.NODE_ENV === 'production' ?
+        new CleanCSS().minify(result.css).styles :
+        result.css;
+
+      src('./source/index.html')
+        .pipe(template({ css }))
+        .pipe(dest(BUILD_DIR));
+    });
 }
 
-export function css() {
-  return src(CSS_GLOB)
-    .pipe(sourcemaps.init())
-      .pipe(postcss([
-        atImport(),
-        lost(),
-        cssnext(),
-        precss()
-      ]))
-    .pipe(sourcemaps.write('./'))
-    .pipe(dest(`${BUILD_DIR}/css`));
+export function favicon() {
+  return src('./source/favicon/*.*')
+    .pipe(dest(BUILD_DIR));
 }
 
 export function serve() {
@@ -51,14 +51,14 @@ export function serve() {
 }
 
 export function watch() {
-  gulp.watch(HTML_GLOB, html);
-  gulp.watch(CSS_GLOB, css);
+  gulp.watch('./source/**/*.{html,css}', html);
 }
 
 export function build(callback) {
   return series(
     clean,
-    parallel(html, css)
+    html,
+    favicon
   )(callback);
 }
 

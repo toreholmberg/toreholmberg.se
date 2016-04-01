@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
+  font-size: calc(112.5% + 0.25vw);
 }
 
 *,
@@ -11,14 +11,12 @@ html {
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif;
-  font-size: 1.6em;
-  font-weight: 300;
-  letter-spacing: .01em;
-  line-height: 1.6;
   background-color: #1f1f1f;
   color: #f1f1f1;
-  padding: 2rem;
+  padding: 20px;
   margin: 0;
+  line-height: 1.6;
+  font-weight: 300;
 }
 
 header, main {
@@ -28,24 +26,23 @@ header, main {
 }
 
 header {
-  margin-top: 4rem;
+  margin-top: 40px;
 }
 
 svg {
   fill: currentColor;
-  height: 10rem;
+  height: 100px;
 }
 
 h1 {
   font-weight: 400;
-  font-size: 4.2rem;
-  margin-bottom: 2rem;
+  font-size: 2em;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 p {
-  font-size: 3rem;
+  font-size: 1em;
   margin-top: 0;
 }
 
@@ -73,11 +70,10 @@ ul {
 
 li {
   display: inline-block;
-  margin-right: 1rem;
-}
+  margin-right: 10px;
+  font-size: 0.8em;
 
-@media only screen and (max-width: 1024px) {
-  html {
-    font-size: 50%;
+  @media only screen and (max-width: 768px) {
+    display: block;
   }
 }
