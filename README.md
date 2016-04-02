@@ -1,16 +1,16 @@
 # toreholmberg.se
 
-> Ultra simple static site. Build using Gulp, deployed to S3 and served via CloudFlare.
+> Ultra simple static site. Build using Gulp, deployed to S3 & served via CloudFlare.
 
 ## Prerequisites
 
 - Node
+- [AWS CLI](https://github.com/aws/aws-cli#installation) (deploy)
 - [Gulp CLI](https://github.com/gulpjs/gulp-cli)
-- [AWS CLI](https://github.com/aws/aws-cli#installation) (deployments)
 
 ## Installation
 
-1. Install node.
+1. Install Node and AWS CLI.
 
 2. Install Gulp CLI:
 
@@ -18,7 +18,7 @@
   npm install -g gulp-cli
   ```
 
-3. Install module dependencies
+3. Install module dependencies:
 
   ```sh
   npm install
@@ -36,7 +36,7 @@
 
 ## Deployment
 
-To deploy build to S3:
+To deploy:
 
 1. Production build:
 
