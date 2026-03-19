@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tore Holmberg | Engineering Lead</title>
+  <meta name="description" content="Engineering leader with hands-on experience across product, platform, growth, and creative — spanning team leadership and direct contribution.">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       DESIGN TOKENS
+       Layer 1 — Primitives: raw values
+       Layer 2 — Semantic:   meaningful aliases
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+    :root {
+
+      /* ── Layer 1: Gray scale ── */
+      --gray-50:  #e2e2e2;
+      --gray-200: #c0c0c0;
+      --gray-400: #666;
+      --gray-600: #3a3a3a;
+      --gray-800: #1a1a1a;
+      --gray-950: #0c0c0c;
+
+      /* ── Layer 1: Type scale ── */
+      --text-xs:   10px;   /* labels      */
+      --text-sm:   11px;   /* meta, dates */
+      --text-base: 12px;   /* body small  */
+      --text-md:   13px;   /* body        */
+      --text-lg:   15px;   /* name        */
+
+      /* ── Layer 1: Space scale (4px base) ── */
+      --space-1:  4px;
+      --space-3:  12px;
+      --space-4:  16px;
+      --space-5:  20px;
+      --space-6:  24px;
+      --space-7:  28px;
+      --space-11: 44px;
+      --space-13: 52px;
+      --space-14: 56px;
+      --space-18: 72px;
+      --space-20: 80px;
+      --space-24: 96px;
+
+      /* ── Layer 2: Color ── */
+      --color-bg:          var(--gray-950);
+      --color-border:      var(--gray-800);
+      --color-text-muted:  var(--gray-400);
+      --color-text:        var(--gray-200);
+      --color-text-strong: var(--gray-50);
+
+      /* ── Layer 2: Typography ── */
+      --font-family:    'Fira Mono', monospace;
+      --leading-tight:  1.55;
+      --leading-normal: 1.65;
+      --leading-loose:  1.7;
+      --tracking-wide:  0.15em;
+
+      /* ── Layer 2: Layout ── */
+      --page-max-width:   660px;
+      --page-padding-x:   var(--space-6);
+      --page-padding-top: var(--space-18);
+      --page-padding-bot: var(--space-24);
+      --desc-offset:      100px;
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       COMPONENTS
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+    body {
+      background:  var(--color-bg);
+      color:       var(--color-text);
+      font-family: var(--font-family);
+      font-size:   var(--text-md);
+      line-height: var(--leading-loose);
+      padding: var(--page-padding-top) var(--page-padding-x) var(--page-padding-bot);
+    }
+
+    .page {
+      max-width: var(--page-max-width);
+      margin: 0 auto;
+    }
+
+    /* ── Header ── */
+
+    header {
+      display:         flex;
+      justify-content: space-between;
+      align-items:     flex-start;
+      margin-bottom:   var(--space-18);
+    }
+
+    .name {
+      font-size:      var(--text-lg);
+      font-weight:    500;
+      color:          var(--color-text-strong);
+      letter-spacing: -0.01em;
+    }
+
+    .meta {
+      font-size:  var(--text-sm);
+      color:      var(--color-text-muted);
+      margin-top: var(--space-1);
+    }
+
+    .contact {
+      display:     flex;
+      gap:         var(--space-5);
+      align-items: center;
+      padding-top: 2px;
+    }
+
+    .contact a {
+      font-size:       var(--text-base);
+      color:           var(--color-text-muted);
+      text-decoration: none;
+      transition:      color 0.2s ease;
+    }
+
+    .contact a:hover {
+      color: var(--color-text);
+    }
+
+    /* ── Summary ── */
+
+    .summary {
+      color:         var(--color-text);
+      line-height:   var(--leading-normal);
+      margin-bottom: var(--space-13);
+    }
+
+    /* ── Sections ── */
+
+    section {
+      margin-bottom: var(--space-13);
+    }
+
+    .section-label {
+      font-size:      var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wide);
+      color:          var(--color-text-muted);
+      border-bottom:  1px solid var(--color-border);
+      padding-bottom: 14px;
+      margin-bottom:  var(--space-7);
+    }
+
+    /* ── Group: wraps multiple entries under one heading ── */
+
+    .group {
+      margin-bottom: var(--space-11);
+    }
+
+    .group:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Title: group heading or standalone entry heading ── */
+
+    .title {
+      font-size:   var(--text-md);
+      font-weight: 500;
+      color:       var(--color-text-strong);
+    }
+
+    .group > .title {
+      margin-bottom: var(--space-4);
+    }
+
+    .location {
+      font-size:   var(--text-sm);
+      font-weight: 400;
+      color:       var(--color-text-muted);
+      margin-left: var(--space-1);
+    }
+
+    /* ── Entry: a single item (role, school) ── */
+
+    .entry {
+      margin-bottom: var(--space-4);
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-header {
+      display:         flex;
+      justify-content: space-between;
+      align-items:     baseline;
+      gap:             var(--space-3);
+    }
+
+    /* ── Subtitle: secondary label within an entry header ── */
+
+    .subtitle {
+      font-size: var(--text-base);
+      color:     var(--color-text);
+    }
+
+    /* ── Dates ── */
+
+    .dates {
+      font-size:            var(--text-sm);
+      color:                var(--color-text-muted);
+      white-space:          nowrap;
+      flex-shrink:          0;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ── Desc: description or subheading below an entry header ── */
+
+    .desc {
+      font-size:  var(--text-base);
+      color:      var(--color-text-muted);
+      margin-top: 2px;
+      line-height: var(--leading-tight);
+    }
+
+    .group .desc {
+      padding-right: var(--desc-offset);
+    }
+
+    /* ── Mobile ── */
+
+    @media (max-width: 600px) {
+      body {
+        padding: var(--space-14) var(--page-padding-x) var(--space-20);
+      }
+
+      header {
+        flex-direction: column;
+        gap:            var(--space-5);
+        margin-bottom:  var(--space-14);
+      }
+
+      .group .desc {
+        padding-right: var(--space-18);
+      }
+    }
+
+    /* ── Print ── */
+
+    @media print {
+      @page {
+        size: letter;
+        margin: 0.5in 0.6in;
+      }
+
+      /* Override color tokens — component styles inherit automatically */
+      :root {
+        --color-bg:          white;
+        --color-border:      #ccc;
+        --color-text-muted:  #555;
+        --color-text:        #222;
+        --color-text-strong: #000;
+      }
+
+      body {
+        font-size:   11px;
+        line-height: 1.5;
+        padding:     0;
+      }
+
+      .contact a    { text-decoration: none; }
+
+      .section-label {
+        padding-bottom: 6px;
+        margin-bottom:  10px;
+      }
+
+      header          { margin-bottom: 22px; }
+      .summary        { margin-bottom: var(--space-6); }
+      section         { margin-bottom: var(--space-6); }
+      .group          { margin-bottom: 18px; }
+      .group > .title { margin-bottom: 6px; }
+      .entry          { margin-bottom: 6px; }
+      .desc           { margin-top: 2px; }
+      .group .desc    { padding-right: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header>
+      <div>
+        <div class="name">Tore Holmberg</div>
+        <div class="meta">Engineering Lead &nbsp;·&nbsp; Los Angeles, CA</div>
+      </div>
+      <nav class="contact">
+        <a href="mailto:tore@toreholmberg.se">email</a>
+        <a href="https://github.com/toreholmberg" target="_blank" rel="noopener">github</a>
+        <a href="https://linkedin.com/in/toreholmberg" target="_blank" rel="noopener">linkedin</a>
+      </nav>
+    </header>
+
+    <p class="summary">Engineering leader with hands-on experience across product, platform, growth, and creative — spanning team leadership and direct contribution.</p>
+
+    <section>
+      <div class="section-label">Experience</div>
+
+      <div class="group">
+        <div class="title">Block <span class="location">Remote, Los Angeles, CA</span></div>
+        <div class="entry">
+          <div class="entry-header">
+            <span class="subtitle">Staff Software Engineer</span>
+            <span class="dates">2024–2026</span>
+          </div>
+          <div class="desc">Tech lead for Square's Onboarding team, shipping AI-powered activation features within the Growth org.</div>
+        </div>
+        <div class="entry">
+          <div class="entry-header">
+            <span class="subtitle">Engineering Manager</span>
+            <span class="dates">2021–2024</span>
+          </div>
+          <div class="desc">Led Square's Public Web Platform team through a replatform from Rails to a modern Node/Svelte stack.</div>
+        </div>
+        <div class="entry">
+          <div class="entry-header">
+            <span class="subtitle">Design Technology Lead</span>
+            <span class="dates">2018–2021</span>
+          </div>
+          <div class="desc">Founded and scaled the Design Technology discipline at Square across product and marketing surfaces.</div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="title">Your Majesty <span class="location">New York, NY</span></div>
+        <div class="entry">
+          <div class="entry-header">
+            <span class="subtitle">Tech Director</span>
+            <span class="dates">2014–2017</span>
+          </div>
+          <div class="desc">Led all technical efforts across client projects, from scoping and delivery to recruiting and growing the engineering team.</div>
+        </div>
+        <div class="entry">
+          <div class="entry-header">
+            <span class="subtitle">Tech Lead</span>
+            <span class="dates">2012–2014</span>
+          </div>
+          <div class="desc">Led technical direction and hands-on development across a range of client projects.</div>
+        </div>
+        <div class="entry">
+          <div class="entry-header">
+            <span class="subtitle">Senior Developer</span>
+            <span class="dates">2011–2012</span>
+          </div>
+          <div class="desc">Led front-end and back-end development in HTML/CSS/JS and Ruby on Rails.</div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="title">Incredible Department <span class="location">Stockholm, Sweden</span></div>
+        <div class="entry">
+          <div class="entry-header">
+            <span class="subtitle">Technical Lead</span>
+            <span class="dates">2009–2010</span>
+          </div>
+          <div class="desc">Architected and built an eCommerce platform for selling trees to support rainforest preservation.</div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="title">AKQA <span class="location">San Francisco, CA</span></div>
+        <div class="entry">
+          <div class="entry-header">
+            <span class="subtitle">Creative Developer</span>
+            <span class="dates">2008–2009</span>
+          </div>
+          <div class="desc">Built campaign sites for clients including Nike, Xbox, and Gap at a global creative agency.</div>
+        </div>
+      </div>
+
+    </section>
+
+    <section>
+      <div class="section-label">Education</div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="title">Hyper Island <span class="location">Karlskrona, Sweden</span></span>
+          <span class="dates">2007–2009</span>
+        </div>
+        <div class="desc">Digital Media — technology, design, and strategy</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="title">Umeå University <span class="location">Umeå, Sweden</span></span>
+          <span class="dates">2005–2007</span>
+        </div>
+        <div class="desc">Media-communication Engineering</div>
+      </div>
+
+    </section>
+
+  </div>
+</body>
+</html>
