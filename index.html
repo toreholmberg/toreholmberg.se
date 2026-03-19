@@ -413,5 +413,40 @@
     </section>
 
   </div>
+  <script>
+    (function () {
+      const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%!?ÅÄÖÆØÞÐアイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホ字文月日年火水木金土';
+      const SEL   = '.meta, .summary, .section-label, .subtitle, .dates, .desc, .location';
+
+      const rand = () => CHARS[Math.floor(Math.random() * CHARS.length)];
+      const scramble = text => text.split('').map(c => /[a-zA-Z0-9]/.test(c) ? rand() : c).join('');
+
+      const els      = [...document.querySelectorAll(SEL)];
+      const originals = els.map(el => el.textContent);
+
+      // Start all elements scrambled
+      els.forEach((el, i) => el.textContent = scramble(originals[i]));
+
+      // Cascade-resolve each element with a staggered delay
+      els.forEach((el, idx) => {
+        const original = originals[idx];
+        setTimeout(() => {
+          let iter = 0;
+          const t = setInterval(() => {
+            el.textContent = original.split('').map((char, i) => {
+              if (!/[a-zA-Z0-9]/.test(char)) return char;
+              if (i < iter) return original[i];
+              return rand();
+            }).join('');
+            iter += 3;
+            if (iter >= original.length) {
+              el.textContent = original;
+              clearInterval(t);
+            }
+          }, 20);
+        }, idx * 50);
+      });
+    })();
+  </script>
 </body>
 </html>
